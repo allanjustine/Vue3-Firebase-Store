@@ -95,7 +95,7 @@ export default {
 
     return { 
       form, 
-      update 
+      update
     }
   }
 }

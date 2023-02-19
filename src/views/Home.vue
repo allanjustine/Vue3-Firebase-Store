@@ -43,7 +43,7 @@
   <hr>
   <div class="row">
     <div class="col-sm-3" v-for="{ id, productName, category, price, quantity } in products" :key="id">
-      <div class="card mt-4 shadow" style="width: 16rem; height: 27rem;">
+      <div class="card mt-4 shadow">
         <div class="card-header">
           <h5 class="card-title mt-2 text-center">{{ productName }}</h5>
         </div>

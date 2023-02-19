@@ -40,9 +40,9 @@
             <input v-model="form.credit_limit" class="form-control" placeholder="Credit Limit" required />
           </div>
           <button type="submit" class="btn btn-primary form-control mt-3">
-            Add Customer
+            <i class="fa-duotone fa-circle-plus mt-1 mr-1"></i> Add Customer
           </button>
-          <a href="/customers" class="btn btn-secondary form-control mt-1">Back</a>
+          <a href="/customers" class="btn btn-secondary form-control mt-1"><i class="fa-duotone fa-left-long-to-line"></i> Back</a>
         </form>
       </div>
     </div>
