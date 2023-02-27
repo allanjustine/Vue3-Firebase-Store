@@ -19,13 +19,13 @@
       </thead>
       <tbody>
         <tr v-for="{ id, barcode, productName, supplier, category, price, quantity, units } in products" :key="id">
-          <td>{{ barcode }}</td>
-          <td>{{ productName }}</td>
-          <td>{{ supplier }}</td>
+          <td style="text-transform: uppercase;">{{ barcode }}</td>
+          <td style="text-transform: capitalize;">{{ productName }}</td>
+          <td style="text-transform: capitalize;">{{ supplier }}</td>
           <td>{{ category }}</td>
           <td>&#x20b1;{{ price }}</td>
           <td>{{ quantity }}</td>
-          <td>{{ units }}</td>
+          <td style="text-transform: capitalize;">{{ units }}</td>
           <td>
             <router-link :to="`/edit-product/${id}`">
               <button class="btn btn-primary btn-sm me-2">

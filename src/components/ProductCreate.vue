@@ -22,7 +22,7 @@
 
         <div class="form-group mt-2">
           <label>Category</label>
-          <select v-model="form.category" class="form-control">
+          <select v-model="form.category" class="form-control" required>
             <option disabled selected value="">Select Category</option>
             <option value="Electronics">Electronics</option>
             <option value="Foods">Foods</option>

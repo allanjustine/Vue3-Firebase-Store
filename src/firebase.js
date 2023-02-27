@@ -61,8 +61,8 @@ export const deleteProduct = id => {
 
 export const useLoadCustomers = () => {
   const customers = ref([])
-  const close = customersCollection.onSnapshot(snapshot => {
-    customers.value = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+  const close = customersCollection.orderBy('full_name', 'asc').onSnapshot(snapshot => {
+    customers.value = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data(), full_name: doc.data().full_name.toLowerCase() })).sort((a, b) => a.full_name.localeCompare(b.full_name)).map(doc => ({ ...doc, full_name: doc.full_name.charAt(0).toUpperCase() + doc.full_name.slice(1) }))
   })
   onUnmounted(close)
   return customers
@@ -70,8 +70,8 @@ export const useLoadCustomers = () => {
 
 export const useLoadProducts = () => {
   const products = ref([])
-  const close = productsCollection.onSnapshot(snapshot => {
-    products.value = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+  const close = productsCollection.orderBy('productName', 'asc').onSnapshot(snapshot => {
+    products.value = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data(), productName: doc.data().productName.toLowerCase() })).sort((a, b) => a.productName.localeCompare(b.productName)).map(doc => ({ ...doc, productName: doc.productName.charAt(0).toUpperCase() + doc.productName.slice(1) }))
   })
   onUnmounted(close)
   return products

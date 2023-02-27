@@ -18,12 +18,12 @@
       </thead>
       <tbody>
         <tr v-for="{ id, full_name, address, email, mobileNumber, status, credit_limit} in customers" :key="id">
-          <td>{{ full_name }}</td>
-          <td>{{ address }}</td>
+          <td style="text-transform: capitalize;">{{ full_name }}</td>
+          <td style="text-transform: capitalize;">{{ address }}</td>
           <td>{{ email }}</td>
           <td>{{ mobileNumber }}</td>
-          <td>{{ status }}</td>
-          <td>{{ credit_limit }}</td>
+          <td style="text-transform: capitalize;">{{ status }}</td>
+          <td style="text-transform: capitalize;">{{ credit_limit }}</td>
           <td>
             <router-link :to="`/edit-customer/${id}`">
               <button class="btn btn-primary btn-sm me-2">
